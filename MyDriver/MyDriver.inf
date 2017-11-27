@@ -1,0 +1,98 @@
+;;;
+;;; MyDriver
+;;; From: 2012, Roy Wang.
+;;;
+
+[Version]
+signature  	= "$Windows NT$"
+Class		= "AntiVirus"					;This is determined by the work this filter driver does
+ClassGuid 	= {b1d1a169-c54f-4379-81db-bee7d88d7454}	;This value is determined by the Class
+Provider 	= %Roy%
+DriverVer   = 10/18/2012,1.0.0.1000
+
+[Manufacturer]
+%Roy%=Roy, NTx86, NTamd64
+
+[DestinationDirs]
+DefaultDestDir	         = 12
+MyDriver.DriverFiles     = 12 			;%windir%\system32\drivers
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+MyDriver.sys = 1
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %MyDriverServiceDesc%
+CopyFiles           = MyDriver.DriverFiles
+
+[DefaultInstall.Services]
+AddService          = %MyDriverServiceName%,,MyDriver.Service
+AddReg              = MyDriver.AddRegistry
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles   = MyDriver.DriverFiles
+DelReg     = MyDriver.DelRegistry
+
+[DefaultUninstall.Services]
+DelService = MyDriver,0x200				; Flags note to stop service first
+
+;
+; Services Section
+;
+
+[MyDriver.Service]
+DisplayName      = %MyDriverServiceName%
+Description      = %MyDriverServiceDesc%
+ServiceBinary    = %12%\MyDriver.sys		;%windir%\system32\drivers\MyDriver.sys
+ServiceType      = 1					;SERVICE_FILE_SYSTEM_DRIVER
+StartType        = 2					;SERVICE_AUTO_START
+ErrorControl     = 1					;SERVICE_ERROR_NORMAL
+Dependencies     = 
+LoadOrderGroup   = "FSFilter Anti-Virus"
+AddReg		       = MyDriver.AddRegistry
+
+;
+; Registry Modifications
+;
+[MyDriver.AddRegistry]
+HKLM,%MyRegistry%\Parameters,%MyDebugFlags%,0x00010001,0x00000000
+HKR,"Instances","DefaultInstance",0x00000000,%DefaultInstance%
+HKR,"Instances\"%Instance1.Name%,"Altitude",0x00000000,%Instance1.Altitude%
+HKR,"Instances\"%Instance1.Name%,"Flags",0x00010001,%Instance1.Flags%
+
+[MyDriver.DelRegistry]
+HKLM,%MyRegistry%,%MyDebugFlags%
+
+;
+; Copy Files
+;
+[MyDriver.DriverFiles]
+MyDriver.sys
+
+;;
+;; String Section
+;;
+
+[Strings]
+Roy	                 = "Andrew Liang"
+MyDriverServiceDesc  = "Sample Driver for Basic WDM architecture"
+MyDriverServiceName  = "MyDriver"
+Disk1                = "My Driver Source Media"
+MyRegistry           = "system\currentcontrolset\services\MyFilter"
+MyDebugFlags         = "DebugFlags"
+
+;Instances specific information.
+DefaultInstance      = "MyFilter Instance"
+Instance1.Name       = "MyFilter Instance"
+Instance1.Altitude   = "328500"
+Instance1.Flags      = 0x0              ; Allow all attachments

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="big5"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="MyDriver"
+	ProjectGUID="{752A796F-712C-41A0-813C-13F894143788}"
+	RootNamespace="MyDriver"
+	Keyword="MakeFileProj"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Win7 32 Chk|Win32"
+			OutputDirectory="$(ProjectDir)\objchk_win7_x86"
+			IntermediateDirectory="$(ProjectDir)\objchk_win7_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="call $(WDKPATH)\bin\setenv.bat $(WDKPATH) chk win7&#x0D;&#x0A;cd /d $(ProjectDir)&#x0D;&#x0A;build -cZ"
+				ReBuildCommandLine="rmdir /s /q $(ProjectDir)\objchk_win7_x86&#x0D;&#x0A;rm $(ProjectDir)\*.log&#x0D;&#x0A;rm $(ProjectDir)\*.htm&#x0D;&#x0A;&#x0D;&#x0A;call $(WDKPATH)\bin\setenv.bat $(WDKPATH) chk win7&#x0D;&#x0A;cd /d $(ProjectDir)&#x0D;&#x0A;build -cZ"
+				CleanCommandLine="rmdir /s /q $(ProjectDir)\objchk_win7_x86&#x0D;&#x0A;rm $(ProjectDir)\*.log&#x0D;&#x0A;rm $(ProjectDir)\*.htm"
+				Output=""
+				PreprocessorDefinitions="DBG=1;WINVER=0x0601"
+				IncludeSearchPath="&quot;$(WDKPATH)\inc\ddk&quot;;&quot;$(WDKPATH)\inc\api&quot;;&quot;$(WDKPATH)\inc\crt&quot;;&quot;$(WDKPATH)\inc\wdf\kmdf\1.9&quot;"
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Win7 32 Fre|Win32"
+			OutputDirectory="$(ProjectDir)\objfre_win7_x86"
+			IntermediateDirectory="$(ProjectDir)\objfre_win7_x86"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="call $(WDKPATH)\bin\setenv.bat $(WDKPATH) fre win7&#x0D;&#x0A;cd /d $(ProjectDir)&#x0D;&#x0A;build -cZ"
+				ReBuildCommandLine="rmdir /s /q $(ProjectDir)\objfre_win7_x86&#x0D;&#x0A;rm $(ProjectDir)\*.log&#x0D;&#x0A;rm $(ProjectDir)\*.htm&#x0D;&#x0A;&#x0D;&#x0A;call $(WDKPATH)\bin\setenv.bat $(WDKPATH) fre win7&#x0D;&#x0A;cd /d $(ProjectDir)&#x0D;&#x0A;build -cZ"
+				CleanCommandLine="rmdir /s /q $(ProjectDir)\objfre_win7_x86&#x0D;&#x0A;rm $(ProjectDir)\*.log&#x0D;&#x0A;rm $(ProjectDir)\*.htm"
+				Output="MyDriver.exe"
+				PreprocessorDefinitions="WIN32;NDEBUG"
+				IncludeSearchPath="&quot;$(WDKPATH)\inc\ddk&quot;;&quot;$(WDKPATH)\inc\api&quot;;&quot;$(WDKPATH)\inc\crt&quot;;&quot;$(WDKPATH)\inc\wdf\kmdf\1.9&quot;"
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath=".\MyDriver.cpp"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath="..\common\MyDriver.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
+			<File
+				RelativePath=".\makefile"
+				>
+			</File>
+			<File
+				RelativePath=".\sources"
+				>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

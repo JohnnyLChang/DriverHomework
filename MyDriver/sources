@@ -1,0 +1,16 @@
+# $Id$
+TARGETNAME=MyDriver
+TARGETTYPE=DRIVER
+DRIVERTYPE=FS
+
+USER_C_FLAGS=/DCFIX_KERNELMODE
+
+# Additional defines for the C/C++ preprocessor
+C_DEFINES=$(C_DEFINES)
+
+TARGETLIBS= $(TARGETLIBS) \
+            $(IFSKIT_LIB_PATH)\fltMgr.lib \
+
+INCLUDES=..\common;
+  
+SOURCES=MyDriver.cpp 

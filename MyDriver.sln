@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyDriver", "MyDriver\MyDriver.vcproj", "{752A796F-712C-41A0-813C-13F894143788}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyFault", "MyFault\MyFault.vcproj", "{F7CF0EF9-2185-4162-9729-EC1685E464E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Win7 32 Chk|Win32 = Win7 32 Chk|Win32
+		Win7 32 Fre|Win32 = Win7 32 Fre|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{752A796F-712C-41A0-813C-13F894143788}.Win7 32 Chk|Win32.ActiveCfg = Win7 32 Chk|Win32
+		{752A796F-712C-41A0-813C-13F894143788}.Win7 32 Chk|Win32.Build.0 = Win7 32 Chk|Win32
+		{752A796F-712C-41A0-813C-13F894143788}.Win7 32 Fre|Win32.ActiveCfg = Win7 32 Fre|Win32
+		{752A796F-712C-41A0-813C-13F894143788}.Win7 32 Fre|Win32.Build.0 = Win7 32 Fre|Win32
+		{F7CF0EF9-2185-4162-9729-EC1685E464E5}.Win7 32 Chk|Win32.ActiveCfg = Debug|Win32
+		{F7CF0EF9-2185-4162-9729-EC1685E464E5}.Win7 32 Chk|Win32.Build.0 = Debug|Win32
+		{F7CF0EF9-2185-4162-9729-EC1685E464E5}.Win7 32 Fre|Win32.ActiveCfg = Release|Win32
+		{F7CF0EF9-2185-4162-9729-EC1685E464E5}.Win7 32 Fre|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

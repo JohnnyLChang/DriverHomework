@@ -1,0 +1,13 @@
+#ifndef         _MY_DRIVER_DEFINITIONS_
+#define         _MY_DRIVER_DEFINITIONS_
+//define device name
+#define     MY_SYSNAME            L"MyDriver"           //Device Name should be unicode.
+#define     MY_DRIVER_FILEDEVICE  0x00009527            //This value is defined by ourself. It is used to define CTL_CODE()
+
+//define IOCTL codes
+#define IOCTL_FUNC_BSOD       		(ULONG) CTL_CODE( MY_DRIVER_FILEDEVICE, 0x00, METHOD_NEITHER, FILE_ANY_ACCESS )
+#define IOCTL_FUNC_LOG_TEST   		(ULONG) CTL_CODE( MY_DRIVER_FILEDEVICE, 0x01, METHOD_NEITHER, FILE_ANY_ACCESS )
+#define IOCTL_FUNC_LOG_ENABLE   	(ULONG) CTL_CODE( MY_DRIVER_FILEDEVICE, 0x02, METHOD_NEITHER, FILE_ANY_ACCESS )
+#define IOCTL_FUNC_LOG_DISABLE   	(ULONG) CTL_CODE( MY_DRIVER_FILEDEVICE, 0x03, METHOD_NEITHER, FILE_ANY_ACCESS )
+
+#endif          _MY_DRIVER_DEFINITIONS_
